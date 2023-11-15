@@ -39,7 +39,7 @@ export default function Home() {
         </div>
         <section id="expertise">
           <div className="flex justify-center items-center">
-            <span className="text-white font-bold sm:text-xl md:text-2xl lg:text-4xl mt-5">
+            <span className="text-white font-bold sm:text-xl md:text-2xl lg:text-4xl mt-5 mb-5">
               My Expertise
             </span>
           </div>
