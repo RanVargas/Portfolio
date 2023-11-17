@@ -2,6 +2,7 @@ import Image from "next/image";
 import Footer from "./footer";
 import Navbar from "./navbar";
 import Technologies from "./technologies";
+import JobHistory from "./job-history";
 import scroller from "../public/scroller-new.svg";
 import OSS from "../public/operating-system-icon.svg";
 import SWE from "../public/software-engineer-icon.svg";
@@ -152,7 +153,7 @@ export default function Home() {
         </section>
         <Technologies />
         <section id="projects"></section>
-        <section id="experience"></section>
+        <JobHistory />
       </main>
       <Footer />
     </>
