@@ -11,7 +11,7 @@ import Image from "next/image";
 
 function JobHistory() {
   return (
-    <section className="mt-24 text-white mb-20">
+    <section className="mt-24 text-white mb-20" id="experience">
       <div className="grid justify-center items-center">
         <p className="uppercase sm:text-base md:text-2xl lg:text-5xl font-extrabold">
           <span>Professional</span>

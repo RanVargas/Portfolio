@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React from "react";
+import Contact from "./contact/page";
 
 function Navbar() {
   return (
@@ -36,45 +38,45 @@ function Navbar() {
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="font-bold flex flex-col p-4 md:p-0 mt-4  rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 group">
             <li>
-              <a
-                href="#"
+              <Link
+                href="/"
                 className="block py-2 px-3 text-white rounded md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:bg-transparent"
                 aria-current="page"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
+                href="#expertise"
+                className="block py-2 px-3 text-white rounded [&:not(:hover)]:text-black md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:bg-transparent"
+              >
+                Expertise
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="#"
                 className="block py-2 px-3 text-white rounded [&:not(:hover)]:text-black md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:bg-transparent"
               >
-                About
-              </a>
+                Work
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                href="#experience"
                 className="block py-2 px-3 text-white rounded [&:not(:hover)]:text-black md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:bg-transparent"
               >
-                Services
-              </a>
+                Experience
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-white rounded [&:not(:hover)]:text-black md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:bg-transparent"
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="block py-2 px-3 text-white rounded [&:not(:hover)]:text-black md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:bg-transparent"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
