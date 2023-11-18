@@ -45,7 +45,7 @@ export default function Home() {
             </span>
           </div>
           <div className="flex justify-center">
-            <table className="table-fixed border-separate text-white border-spacing-0">
+            <table className="bg-gray-700 table-fixed border-separate text-white border-spacing-0">
               <tbody className="">
                 <tr className="">
                   <td className="border border-slate-50 w-96 h-80">

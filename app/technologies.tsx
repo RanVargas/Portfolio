@@ -27,7 +27,7 @@ import zig from "../public/zig-original.svg";
 function Technologies() {
   return (
     <section id="technologies" className="grid justify-center mt-28 text-white">
-      <p className="justify-self-center">
+      <p className="justify-self-center mb-4 font-medium">
         This are the technologies I have worked with:
       </p>
       <table className="table-fixed justify-self-center border border-white h-1/3 w-1/4 bg-gray-700">
