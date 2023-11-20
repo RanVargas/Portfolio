@@ -18,11 +18,11 @@ function JobHistory() {
           <br /> <span>Experience</span>
         </p>
       </div>
-      <div className="m-5 grid justify-stretch items-center">
+      <div className="m-5 justify-stretch items-center lg:grid sm:flex flex-wrap">
         <Accordion
           type="single"
           collapsible
-          className=" border-white bg-gray-700 w-1/3 justify-self-center rounded-lg grid"
+          className=" border-white bg-gray-700 lg:w-1/3 sm:w-screen md:w-1/2 lg:justify-self-center sm:justify-self-stretch rounded-lg"
         >
           <AccordionItem value="item-1" className="py-2 px-6">
             <AccordionTrigger className=" font-bold place-content-around">
@@ -32,7 +32,7 @@ function JobHistory() {
               <span>2023-2023</span>
             </AccordionTrigger>
             <AccordionContent>
-              <div className="grid justify-center space-y-3">
+              <div className="md:grid justify-center space-y-3 flex-wrap">
                 <div className="flex justify-start space-x-5">
                   <div className="flex justify-center items-center">
                     <Image
@@ -58,12 +58,12 @@ function JobHistory() {
                   </div>
                 </div>
                 <div>
-                  <div>
+                  <div className="">
                     <p>
                       The following were some of the responsabilities involved
                       in this role:{" "}
                     </p>
-                    <ul className="list-disc list-inside leading-relaxed	">
+                    <ul className="list-disc list-inside leading-relaxed">
                       <li>
                         Coordinate in requirements breakdown next to be
                         implementated.
@@ -81,7 +81,7 @@ function JobHistory() {
                       </li>
                     </ul>
                   </div>
-                  <div className="mt-3">
+                  <div className="mt-3 flex flex-wrap">
                     <span className="bg-gray-800 border rounded-full p-1 font-medium text-gray-400">
                       Javascript
                     </span>
@@ -123,7 +123,7 @@ function JobHistory() {
               <span>2022-2023</span>
             </AccordionTrigger>
             <AccordionContent>
-              <div className="grid justify-center space-y-3">
+              <div className="md:grid flex-wrap justify-center space-y-3">
                 <div className="flex justify-start space-x-5">
                   <div className="flex justify-center items-center">
                     <Image
@@ -172,7 +172,7 @@ function JobHistory() {
                       <li>Assist meets with stakeholders .</li>
                     </ul>
                   </div>
-                  <div className="mt-3">
+                  <div className="mt-3 flex flex-wrap">
                     <span className="bg-gray-800 border rounded-full p-1 font-medium text-gray-400">
                       Javascript
                     </span>
@@ -213,7 +213,7 @@ function JobHistory() {
               <span>2021-2022</span>
             </AccordionTrigger>
             <AccordionContent>
-              <div className="grid justify-center space-y-3">
+              <div className="md:grid justify-center space-y-3 flex-wrap">
                 <div className="flex justify-start space-x-5">
                   <div className="flex justify-center items-center">
                     <Image
@@ -256,7 +256,7 @@ function JobHistory() {
                       <li>Ensure delivered code has been thoroughly tested</li>
                     </ul>
                   </div>
-                  <div className="mt-3">
+                  <div className="mt-3 flex flex-wrap">
                     <span className="bg-gray-800 border rounded-full p-1 font-medium text-gray-400">
                       Javascript
                     </span>
@@ -286,7 +286,7 @@ function JobHistory() {
               <span>2020-2021</span>
             </AccordionTrigger>
             <AccordionContent>
-              <div className="grid justify-center space-y-3">
+              <div className="md:grid justify-center space-y-3 flex-wrap">
                 <div className="flex justify-start space-x-5">
                   <div className="flex justify-center items-center">
                     <Image
@@ -326,7 +326,7 @@ function JobHistory() {
                       <li>Implement new features over corporate web app.</li>
                     </ul>
                   </div>
-                  <div className="mt-3">
+                  <div className="mt-3 flex flex-wrap">
                     <span className="bg-gray-800 border rounded-full p-1 font-medium text-gray-400">
                       Javascript
                     </span>

@@ -36,7 +36,7 @@ function Technologies() {
             <td className="grid justify-center items-center pt-2">
               <div className="justify-self-center grid justify-center items-center">
                 <p className="justify-self-center">OS:</p>
-                <div className="flex space-x-3 mt-1">
+                <div className="flex space-x-3 mt-1 flex-wrap p-5">
                   <Image
                     src={windows}
                     height={45}
@@ -57,7 +57,7 @@ function Technologies() {
             <td className="grid justify-center items-center">
               <div className="justify-self-center grid justify-center items-center">
                 <p className="justify-self-center">Frameworks:</p>
-                <div className="flex space-x-3 mt-1">
+                <div className="flex space-x-3 mt-1 flex-wrap p-5">
                   <Image
                     src={spring}
                     height={45}
@@ -92,7 +92,7 @@ function Technologies() {
             <td className="grid justify-center items-center">
               <div className="justify-self-center grid justify-center items-center">
                 <p className="justify-self-center">Others:</p>
-                <div className="flex space-x-3 mt-1">
+                <div className="flex space-x-3 mt-1 flex-wrap p-5">
                   <Image
                     src={html}
                     height={45}
@@ -114,7 +114,7 @@ function Technologies() {
             <td className="grid justify-center items-center">
               <div className="justify-self-center grid justify-center items-center">
                 <p className="justify-self-center">Programming Languages:</p>
-                <div className="flex space-x-3 mt-1">
+                <div className="flex space-x-3 mt-1 flex-wrap p-5">
                   <Image
                     src={rust}
                     height={45}
@@ -184,7 +184,7 @@ function Technologies() {
             <td className="grid justify-center items-center">
               <div className="justify-self-center grid justify-center items-center">
                 <p className="justify-self-center">Clouds:</p>
-                <div className="flex space-x-3 mt-1">
+                <div className="flex space-x-3 mt-1 flex-wrap p-5">
                   <Image
                     src={aws}
                     height={45}
@@ -206,7 +206,7 @@ function Technologies() {
             <td className="grid justify-center items-center">
               <div className="justify-self-center grid justify-center items-center">
                 <p className="justify-self-center">Libraries:</p>
-                <div className="flex space-x-3 mt-1">
+                <div className="flex space-x-3 mt-1 flex-wrap p-5">
                   <Image
                     src={reactlib}
                     height={45}
@@ -220,7 +220,7 @@ function Technologies() {
             <td className="grid justify-center items-center pb-2">
               <div className="justify-self-center grid justify-center items-center">
                 <p className="justify-self-center">CI/CD:</p>
-                <div className="flex space-x-3 mt-1">
+                <div className="flex space-x-3 mt-1 flex-wrap p-5">
                   <Image
                     src={git}
                     height={45}
