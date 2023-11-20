@@ -39,7 +39,7 @@ function Expertise() {
                 <div className="grid items-center mt-3">
                   <p className="justify-self-center w-60">
                     Experienced Software Engineer in programming paradigms such
-                    as OOP, Functional, Structured, Imperative.
+                    as OOP, Functional, Structured, and Imperative.
                   </p>
                 </div>
               </td>

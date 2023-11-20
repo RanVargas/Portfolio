@@ -25,7 +25,7 @@ export default function Home() {
           </div>
         </section>
         <div className="flex justify-center items-center mt-32 mb-20">
-          <a href="#">
+          <a href="#expertise">
             <Image
               src={scroller}
               height={40}

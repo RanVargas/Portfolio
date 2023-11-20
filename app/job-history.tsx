@@ -42,7 +42,7 @@ function JobHistory() {
                       alt="Location"
                       className="mr-0.5"
                     />
-                    <p>Remote</p>
+                    <p>Santo Domingo, Dominican Republic (Remote)</p>
                   </div>
                   <div className="flex justify-center items-center">
                     <Image
@@ -223,7 +223,7 @@ function JobHistory() {
                       alt="Location"
                       className="mr-0.5"
                     />
-                    <p>Remote</p>
+                    <p>Santo Domingo, Dominican Republic (Remote)</p>
                   </div>
                   <div className="flex justify-center items-center">
                     <Image
