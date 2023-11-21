@@ -143,9 +143,7 @@ function JobHistory() {
                       alt="Location"
                       className="mr-1"
                     />
-                    <a href="https://www.hahn-software.io/en/home">
-                      hahn-software.io
-                    </a>
+                    <a href="http://xpertcode.com.do/">xpertcode.com.do</a>
                   </div>
                 </div>
                 <div>
@@ -233,9 +231,7 @@ function JobHistory() {
                       alt="Location"
                       className="mr-1"
                     />
-                    <a href="https://www.hahn-software.io/en/home">
-                      hahn-software.io
-                    </a>
+                    <a href="https://www.Laborat.io">Laborat.io</a>
                   </div>
                 </div>
                 <div>
@@ -306,9 +302,7 @@ function JobHistory() {
                       alt="Location"
                       className="mr-1"
                     />
-                    <a href="https://www.hahn-software.io/en/home">
-                      hahn-software.io
-                    </a>
+                    <a href="https://www.cardnet.com.do/">cardnet.com.do/</a>
                   </div>
                 </div>
                 <div>
