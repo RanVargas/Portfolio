@@ -5,8 +5,15 @@ import Expertise from "./expertise";
 import Technologies from "./technologies";
 import JobHistory from "./job-history";
 import scroller from "../public/scroller-new.svg";
+import cron from "node-cron";
+import { handler } from "./api/cronjob/project-cacher";
+import ProjectShowroom from "./project-showroom";
 
 export default function Home() {
+  cron.schedule("0 0 1,15 * *", () => {
+    //*/10 * * * * is for every 10 mins --------0 0 1,15 * * for twice a month
+    handler();
+  });
   return (
     <>
       <Navbar />
@@ -37,7 +44,7 @@ export default function Home() {
         </div>
         <Expertise />
         <Technologies />
-        <section id="projects"></section>
+
         <JobHistory />
       </main>
       <Footer />
