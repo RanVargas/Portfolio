@@ -9,17 +9,37 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.504.0",
+    "@aws-sdk/lib-storage": "^3.504.0",
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@radix-ui/react-accordion": "^1.1.2",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
+    "base64-arraybuffer": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "dotenv": "^16.4.1",
     "eslint": "8.45.0",
-    "eslint-config-next": "13.4.10",
-    "next": "13.4.10",
+    "eslint-config-next": "^14.1.0",
+    "font-awesome": "^4.7.0",
+    "lucide-react": "^0.292.0",
+    "next": "^14.1.0",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "octokit": "^3.1.2",
     "postcss": "8.4.26",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "tailwind-merge": "^2.0.0",
     "tailwindcss": "3.3.3",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@types/node-cron": "^3.0.11"
   }
 }
