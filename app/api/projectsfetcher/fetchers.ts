@@ -19,8 +19,10 @@ const s3 = new S3Client(config);
 
 
 
-export default async function handler(req: any, res: any){
-    console.log(req, res);
+export default async function handler(req: any, res: any): Promise<ProjectsData []>{
+  dotenv.config();
+  console.log(process.env.BUCKET_REGION, " Is the region");
+    
     try {
     const listObjectsCommand = new ListObjectsV2Command({
         Bucket: process.env.BUCKET_NAME,
@@ -54,14 +56,14 @@ export default async function handler(req: any, res: any){
               photo = file.Key;
             }
           });
-          //console.log("this is the end", mdFile, photo);
+          
           //return;
           if (mdFile == undefined && photo == undefined) {
             return;
           }
           const folderName = prefix.Prefix!.slice(0, -1); // Remove trailing slash
           //const mdFileKey = `${folderName}/${folderName}.md`;
-          console.log(`this is the md file: ${mdFile}`)
+          
           // Fetch the MD file
           const mdFileCommand = new GetObjectCommand({
             Bucket: process.env.BUCKET_NAME,
@@ -88,9 +90,19 @@ export default async function handler(req: any, res: any){
           
           return returnable;
         })
-      );
-  
-      return folderContents;
+      ).catch((reason) => {
+        console.log(reason);
+        return [] as ProjectsData[];
+      });
+      /*console.log("This is a signal that the resulting content is shown here");
+      console.log(folderContents);
+      console.log("Now here comes the content filtered");
+      console.log(folderContents.filter((value) => {return value != undefined}));
+      console.log("Now here comes the content filtered as projectData");
+      */
+     let trial = folderContents.filter(Boolean) as ProjectsData[];
+      //console.log(trial, "Which is what I return");
+      return trial;
     } catch (error) {
       console.log(`Error fetching S3 files: ${error}`);
       //res.json({ error: "Internal Server Error" });

@@ -56,7 +56,7 @@ function Navbar() {
             </li>
             <li>
               <Link
-                href="#"
+                href="/#Projects"
                 className="block py-2 px-3 text-white rounded [&:not(:hover)]:text-black md:hover:bg-transparent md:border-0 md:p-0 md:dark:hover:bg-transparent"
               >
                 Projects

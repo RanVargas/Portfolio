@@ -77,14 +77,4 @@ function Contact() {
   );
 }
 
-export async function getStaticProps() {
-  // Fetch content for all folders
-  const response = await fetch("/api/s3-files/all");
-  const folderContents = await response.json();
-
-  return {
-    props: { folderContents },
-  };
-}
-
 export default Contact;

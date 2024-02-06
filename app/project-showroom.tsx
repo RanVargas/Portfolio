@@ -1,4 +1,3 @@
-"use client";
 import handler from "./api/projectsfetcher/fetchers";
 import React, { useEffect, useState } from "react";
 import { encode } from "base64-arraybuffer";
@@ -15,97 +14,75 @@ function byteArrayToBase64(byteArray: Uint8Array) {
   return encode(buffer);
 }
 
-function prepareProjects(): ProjectsData[] {
-  let fetcher: ProjectsData[] = handler({}, {}).then((value) => {
-    return value;
-  });
-  let projectsWithHtml = fetcher
-    .filter(function (element) {
-      return element !== undefined? element: return;
-    })
-    .map(async (data: ProjectsData) => {
-      const tempP: ProjectsData = {description: (await remark().use(html).process(data.description)).toString(), photo: data.photo, folder: data.folder}
-      return tempP;
-    });
-  projectsWithHtml = projectsWithHtml.filter(
-    (element) => {
-      return element !== undefined;
+async function prepareProjects() {
+  let fercherCacher: ProjectsData[] = [];
+  let fetcher: ProjectsData[] = await handler(null, null).then((result) => {
+    if (result.length != 0) {
+      fercherCacher.concat(...result);
     }
+    return result;
+  });
+
+  let projectsWithHtml: ProjectsData[] = fetcher.filter(
+    (element) => element !== undefined
   );
-  console.log(projectsWithHtml);
-  return projectsWithHtml.then();
-  
+  let refined = projectsWithHtml.map((data: ProjectsData) => {
+    const tempP: ProjectsData = {
+      description: remark().use(html).processSync(data.description).toString(),
+      photo: data.photo,
+      folder: data.folder,
+    };
+    return tempP;
+  });
+
+  return refined;
 }
 
-function ProjectShowroom() {
-  const [projects, setProjects] = useState<ProjectsData[]>();
-
-  useEffect(() => {
-    const callProjects = async () => {
-      const fetcher = await handler({}, {}).then((data) => {
-        return data;
-      });
-      console.log(fetcher);
-      let projectsWithHtml = fetcher
-        .filter(function (element: ProjectsData) {
-          return element !== undefined;
-        })
-        .map(async (data: ProjectsData): Promise<ProjectsData> => {
-          return {
-            description: (
-              await contentHtml(await processedContent(data.description))
-            ).toString(),
-            folder: data.folder,
-            photo: data.photo,
-          };
-        });
-      projectsWithHtml = projectsWithHtml.filter(function (
-        element: ProjectsData
-      ) {
-        return element !== undefined;
-      });
-      console.log(projectsWithHtml);
-      const projects: ProjectsData[] = projectsWithHtml;
-      setProjects(projects);
-    };
-
-    callProjects();
-  }, []);
-  useEffect(() => {
-    console.log(projects);
-  }, [projects]);
-
-  /*let folderContents: ProjectsData[] = await handler({}, {});
-  folderContents = folderContents.filter(function (element) {
-    return element !== undefined;
-  });*/
+async function ProjectShowroom() {
   const processedContent = async (theContent: string) =>
     await remark().use(html).process(theContent);
   const contentHtml = async (processor: any): Promise<string> =>
     processor.toString();
-
-  //const folderContents = await response.json();
+  const projects = await prepareProjects();
 
   return (
-    <section className="text-white">
-      {projects!.map((content: ProjectsData) => (
-        <div key={content.folder}>
-          <p className="font-bold">{content.folder}</p>
-          {content.description && (
-            <div
-              dangerouslySetInnerHTML={{
-                __html: content.description,
-              }}
-            ></div>
-          )}
-          {content.photo && (
-            <img
-              src={`data:image/jpeg;base64,${byteArrayToBase64(content.photo)}`}
-              alt="Photo of the project"
-            />
-          )}
-        </div>
-      ))}
+    <section className="text-white" id="Projects">
+      <div className="grid mt-5">
+        <h2 className="font-black text-3xl justify-self-center">Projects</h2>
+      </div>
+      <div className="text-white grid justify-around m-8">
+        {projects.map((content: ProjectsData) => (
+          <div
+            className="bg-gray-700 max-w-4xl max-h-fit rounded-lg  shadow-lg grid justify-center justify-items-center"
+            key={content.folder}
+          >
+            {content.photo && (
+              <img
+                src={`data:image/jpeg;base64,${byteArrayToBase64(
+                  content.photo
+                )}`}
+                alt="Photo of the project"
+                className="h-96 md:h-auto md:w-96"
+              />
+            )}
+            <div className="p-6 grid">
+              <h3 className="text-lg font-black justify-self-center">
+                {content.folder}
+              </h3>
+
+              <div className="mt-4 prose text-center">
+                {content.description && (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: content.description,
+                    }}
+                  ></div>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
