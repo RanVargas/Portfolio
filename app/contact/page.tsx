@@ -33,7 +33,7 @@ function Contact() {
           can colaborate, connect or maybe reach an agreement for work.
         </p>
         <form onSubmit={handleSubmit} className="w-full max-w-lg">
-          <label className="block mb-4">
+          <label className="block mb-4 ">
             Name:
             <input
               type="text"
@@ -41,10 +41,10 @@ function Contact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Enter your name..."
-              className="w-full px-4 py-2 border rounded"
+              className="w-full px-4 py-2 border rounded text-black"
             />
           </label>
-          <label className="block mb-4">
+          <label className="block mb-4 ">
             Email:
             <input
               type="email"
@@ -52,7 +52,7 @@ function Contact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your email address"
-              className="w-full px-4 py-2 border rounded"
+              className="w-full px-4 py-2 border rounded text-black"
             />
           </label>
           <label className="block mb-4">
@@ -61,7 +61,7 @@ function Contact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded"
+              className="w-full px-4 py-2 border rounded text-black"
             />
           </label>
           <button
