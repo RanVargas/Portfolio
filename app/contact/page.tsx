@@ -1,9 +1,11 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import Navbar from "../navbar";
 import Footer from "../footer";
 
 function Contact() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,6 +39,8 @@ function Contact() {
 
       if (response.ok) {
         setStatus("Message sent successfully!");
+        alert("Message Sent, Thank you!");
+        router.push("/");
       } else {
         const errorData = await response.json();
         setStatus(`Failed to send message: ${errorData.error}`);
