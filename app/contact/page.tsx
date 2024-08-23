@@ -10,7 +10,11 @@ function Contact() {
     message: "",
   });
 
-  const handleChange = (e: any) => {
+  const [status, setStatus] = useState<string | null>(null);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -18,10 +22,28 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission, e.g., send email
-    //sendEmail(formData);
+    setStatus(null); // Reset status message
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+      } else {
+        const errorData = await response.json();
+        setStatus(`Failed to send message: ${errorData.error}`);
+      }
+    } catch (error) {
+      setStatus("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -30,10 +52,10 @@ function Contact() {
       <section className="flex flex-col items-center justify-center min-h-[50vh] text-white">
         <p className="text-center mb-8">
           Hi! Please leave me your contact details along with your message, we
-          can colaborate, connect or maybe reach an agreement for work.
+          can collaborate, connect or maybe reach an agreement for work.
         </p>
         <form onSubmit={handleSubmit} className="w-full max-w-lg">
-          <label className="block mb-4 ">
+          <label className="block mb-4">
             Name:
             <input
               type="text"
@@ -44,7 +66,7 @@ function Contact() {
               className="w-full px-4 py-2 border rounded text-black"
             />
           </label>
-          <label className="block mb-4 ">
+          <label className="block mb-4">
             Email:
             <input
               type="email"
@@ -61,6 +83,7 @@ function Contact() {
               name="message"
               value={formData.message}
               onChange={handleChange}
+              placeholder="Enter your message..."
               className="w-full px-4 py-2 border rounded text-black"
             />
           </label>
