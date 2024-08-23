@@ -21,7 +21,7 @@ const s3 = new S3Client(config);
 
 export default async function handler(req: any, res: any): Promise<ProjectsData []>{
   dotenv.config();
-  console.log(process.env.BUCKET_REGION, " Is the region");
+  
     
     try {
     const listObjectsCommand = new ListObjectsV2Command({
@@ -61,8 +61,8 @@ export default async function handler(req: any, res: any): Promise<ProjectsData 
           if (mdFile == undefined && photo == undefined) {
             return;
           }
-          const folderName = prefix.Prefix!.slice(0, -1); // Remove trailing slash
-          //const mdFileKey = `${folderName}/${folderName}.md`;
+          const folderName = prefix.Prefix!.slice(0, -1); 
+          
           
           // Fetch the MD file
           const mdFileCommand = new GetObjectCommand({
@@ -94,18 +94,13 @@ export default async function handler(req: any, res: any): Promise<ProjectsData 
         console.log(reason);
         return [] as ProjectsData[];
       });
-      /*console.log("This is a signal that the resulting content is shown here");
-      console.log(folderContents);
-      console.log("Now here comes the content filtered");
-      console.log(folderContents.filter((value) => {return value != undefined}));
-      console.log("Now here comes the content filtered as projectData");
-      */
+      
      let trial = folderContents.filter(Boolean) as ProjectsData[];
-      //console.log(trial, "Which is what I return");
+      
       return trial;
     } catch (error) {
       console.log(`Error fetching S3 files: ${error}`);
-      //res.json({ error: "Internal Server Error" });
+      
       return res;
     }
 }
